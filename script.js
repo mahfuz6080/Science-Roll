@@ -66,18 +66,18 @@ const facts = [
 
 document.getElementById("rollButton").addEventListener("click", function() {
   const rollSound = document.getElementById("rollSound");
-  rollSound.currentTime = 0; // Reset sound to the start
-  rollSound.play(); // Play sound
+  rollSound.currentTime = 0;
+  rollSound.play();
 
   const randomFact = facts[Math.floor(Math.random() * facts.length)];
   const resultDiv = document.getElementById("result");
 
-  // Fade out old result
+  
   resultDiv.style.opacity = 0;
 
-  // Wait for sound to finish before showing result
+  
   rollSound.onended = function() {
     resultDiv.innerHTML = `<strong>${randomFact.type}:</strong> ${randomFact.name}<br>${randomFact.description}`;
-    resultDiv.style.opacity = 1; // Fade in new result
+    resultDiv.style.opacity = 1; 
   };
 });
